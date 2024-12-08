@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wahlergebnisse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Wahlergebnisse</h1>
+
+    <table>
+        <tr>
+            <th>Partei</th>
+            <th>Stimmen</th>
+            <th>Vorzugsstimme</th>
+            <th>Stimmen</th>
+        </tr>
+        <tr>
+            <td rowspan="5">Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+        </tr>
+    </table>
+    <script>
+        var getJSON = function(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status === 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status, xhr.response);
+                }
+            };
+            xhr.send();
+        };
+
+        getJSON('http://localhost:8080/election/33123/json',
+            function(err, data) {
+                if (err !== null) {
+                    alert('Something went wrong: ' + err);
+                } else {
+                    alert('Your query count: ' + data.query.count);
+                }
+            });
+
+    </script>
+</body>
+</html>

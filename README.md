@@ -40,7 +40,9 @@ So können die Daten an die Zentrale geschickt werden (in der Konsole):
 curl -X POST "http://localhost:8080/send/12345
 ```
 
-Um die Daten zu sehen, muss einfach nur `localhost:8080/getData` im Browser aufgerufen werden. 
+Um die Daten zu sehen, muss einfach nur `localhost:8080/getData` im Browser aufgerufen werden.  
+
+Dass die Daten alle 10 Minuten gesendet werden, wird die Annotation @Scheduled(fixedRate=600000) benötigt. 
 
 # Probleme
 

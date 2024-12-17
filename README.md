@@ -50,24 +50,24 @@ Es gab Probleme beim Ausführen, nachdem ich die Packages neu angeordnet hatte. 
 
 # Fragestellungen
 
-Nennen Sie mindestens 4 Eigenschaften der Message Oriented Middleware?
+### Nennen Sie mindestens 4 Eigenschaften der Message Oriented Middleware?
 
 - Persistente, asynchrone Kommunikation
 - Kommunikation kann Minuten dauern
 - Effiziente Ressourcennutzung
 - Die Nachrichten sind in einer Warteschlange
 
-Was versteht man unter einer transienten und synchronen Kommunikation?
+### Was versteht man unter einer transienten und synchronen Kommunikation?
 
 **Transient:** Die Nachricht wird nur so lange gespeichert, während Sender und Empfänger ausführen. 
 
 **Synchron:** Der Absender kann nichts machen, bis die Nachricht beim Empfänger angekommen ist und die Nachricht vom Empfänger verarbeitet wurde. 
 
-Beschreiben Sie die Funktionsweise einer JMS Queue?
+### Beschreiben Sie die Funktionsweise einer JMS Queue?
 
 Eine JMS Queue hat m Sender und n Empfänger, aber nur ein Empfänger kann eine Nachricht erhalten. 
 
-JMS Overview - Beschreiben Sie die wichtigsten JMS Klassen und deren Zusammenhang?
+### JMS Overview - Beschreiben Sie die wichtigsten JMS Klassen und deren Zusammenhang?
 
 **ConnectionFactory** creates **Connection** creates **Sessions** creates either **MessageProducer** or **MessageConsumer.** 
 
@@ -91,10 +91,10 @@ JMS Overview - Beschreiben Sie die wichtigsten JMS Klassen und deren Zusammenhan
 
 - `ConnectionFactory` → erstellt `Connection` → erstellt `Session` → erstellt `MessageProducer` oder `MessageConsumer`.
 
-Beschreiben Sie die Funktionsweise eines JMS Topic?
+### Beschreiben Sie die Funktionsweise eines JMS Topic?
 
 Ein JMS Topic hat m Publisher und n Subscriber und Nachrichten können an alle Subscriber geliefert werden. 
 
-Was versteht man unter einem lose gekoppelten verteilten System? Nennen Sie ein Beispiel dazu. Warum spricht man hier von lose?  
+### Was versteht man unter einem lose gekoppelten verteilten System? Nennen Sie ein Beispiel dazu. Warum spricht man hier von lose?  
 
 Lose gekoppelt bedeutet, dass das System nicht fix an etwas gebunden ist und es eine Zwischenstufe zwischen Sender und Empfänger gibt. Auch wenn einer von den beiden Teilnehmern nicht aktiv ist, gehen die Nachrichten nicht verloren.

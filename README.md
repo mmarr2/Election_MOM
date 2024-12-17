@@ -44,9 +44,26 @@ Um die Daten zu sehen, muss einfach nur `localhost:8080/getData` im Browser aufg
 
 Dass die Daten alle 10 Minuten gesendet werden, wird die Annotation @Scheduled(fixedRate=600000) benötigt. 
 
+Der Consumer sieht so aus: 
+
+```java
+@KafkaTopics(topic="election", groupId="1")
+public void listen(String message, String topic) {
+        //code
+    }
+```
+
+Und der Producer so: 
+
+```java
+public void sendMessage(String topic, Wahllokal lokal){
+	kafkaTemplate.send(topic, lokcal.toString());
+}
+```
+
 # Probleme
 
-Es gab Probleme beim Ausführen, nachdem ich die Packages neu angeordnet hatte. Das lag daran, dass die Klasse `ElectionApplication` im falschen Package war. Um das Problem zu lösen, musste ich die Klasse ins `com.example` Package verschieben. 
+Es gab Probleme beim Ausführen, nachdem ich die Packages neu angeordnet hatte. Das lag daran, dass die Klasse `ElectionApplication` im falschen Package war. Um das Problem zu lösen, musste ich die Klasse ins `com.example` Package verschieben. Müssen die Daten im Consumer wieder als JSON gezeigt werden? Wenn ja dann Problem. 
 
 # Fragestellungen
 
